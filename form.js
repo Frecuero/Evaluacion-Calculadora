@@ -25,8 +25,13 @@ num = ((valor)=> {
 function operation (valor){
     if(valor == '/' || valor == '*' || valor == '+' || valor == '-' || valor == '='){
         // total = total.substring(0, total.length - 1)
-        console.log('valor de operacion total '+ total + " op "+valor) 
-        operacion.push(total)
+        console.log('valor de operacion total '+ total + " op "+valor)
+        if(valor == '='){
+            total = total.substring(0, total.length - 1)
+            let a = eval(total)
+            total = total + '= '+a
+            operacion.push(total)
+        }
         switch (valor) {
             case '/':
                 aux = total
@@ -49,6 +54,11 @@ function operation (valor){
             case '=':
                 op="="
                 total = auxtotal
+                let lis = ''
+                operacion.forEach(element => {
+                    lis += `<li>${element}` 
+                });
+                document.getElementById('list').innerHTML = lis
                 console.log('Total '+total)
                 break;
             }
@@ -86,5 +96,7 @@ function operation (valor){
 
 function cleanResult() {
 	total=''
+    operacion = []
+    document.getElementById('list').innerHTML = ''
     $("#result").val(total);
 }
