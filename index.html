@@ -8,60 +8,51 @@
     <title>Calculadora</title>
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="card bg-info col-xs-12 col-sm-12 col-md-12 col-lg-12 mt-5" style="width: 18rem;">
-                <div class="card-body">
-                  <h5 class="card-title">Calculadora</h5>
-                  <div class="row">
-                    <div class="col-md-12">
-                        <input type="text" id="result" name="result" class="form-control col-8 text-right p-1 ml-1" value="0" disabled>
-                    </div>
-                  </div>
-                  <div class="row mt-1"> <!-- AC Off -->
-                    <div class="col-md-12">
-                        <a class="btn btn-primary text-white col-md-2" style="visibility: hidden;">AC</a>
-                        <a class="btn btn-danger text-white col-md-2" onclick="num('ac')">AC</a>
-                        <a class="btn btn-secondary text-white col-md-2" onclick="num('off')">OFF</a>
-                        <a class="btn btn-primary text-white col-md-2" style="visibility: hidden;">AC</a>
-                    </div>
-                  </div>
-                  <div class="row mt-1"> <!-- 7 8 9 / -->
-                    <div class="col-md-12">
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('7')">7</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('8')">8</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('9')">9</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('/')">/</a>
-                    </div>
-                  </div>
-                  <div class="row mt-1"> <!--  4 5 6 *  -->
-                    <div class="col-md-12">
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('4')">4</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('5')">5</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('6')">6</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('*')">*</a>
-                    </div>
-                  </div>
-                  <div class="row mt-1"> <!--  0 1 2 3 - -->
-                    <div class="col-md-12">
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('1')">1</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('2')">2</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('3')">3</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('-')">-</a>
-                    </div>
-                  </div>
-                  <div class="row mt-1"> <!--  0 . = + -->
-                    <div class="col-md-12">
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('0')">0</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('.')">.</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('=')">=</a>
-                        <a class="btn btn-primary text-white col-md-2" onclick="num('+')">+</a>
-                    </div>
-                  </div>
-                  
-                </div>
-              </div>
-        </div>
+    <div class="container badge-info mt-4 p-3" style="border-radius: 10px;">
+            <!-- <div class="card bg-info mt-5"> col-xs-12 col-sm-12 col-md-12 col-lg-12 -->
+                <!-- <div class="card-body"> -->
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <h5 class="card-title">Calculadora</h5>
+                        </div>
+                        <div class="col-md-12 p-1" >
+                          <input type="text" id="result" name="result" class="form-control col-12 text-right " value="0" readonly>
+                        </div>
+                        <div class="row">
+                            <a class="btn btn-primary text-white col-md-3" style="visibility: hidden;">AC</a>
+                            <a class="btn btn-danger text-white col-md-3" onclick="num('ac')">AC</a>
+                            <a class="btn btn-secondary text-white col-md-3" onclick="num('off')">OFF</a>
+                            <a class="btn btn-primary text-white col-md-3" style="visibility: hidden;">AC</a>
+                        </div>
+                        <div class="row mr-1 ml-1">
+                            <a class="btn btn-primary text-white col-md-3" onclick="num('8')">8</a>
+                            <a class="btn btn-primary text-white col-md-3" onclick="num('7')">7</a>
+                            <a class="btn btn-primary text-white col-md-3" onclick="num('9')">9</a>
+                            <a class="btn btn-primary text-white col-md-3" onclick="num('/')">/</a>
+                        </div>
+                        <div class="row mr-1 ml-1">
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('4')">4</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('5')">5</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('6')">6</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('*')">*</a>
+                        </div>
+                        <div class="row mr-1 ml-1">
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('1')">1</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('2')">2</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('3')">3</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('-')">-</a>
+                        </div>
+                        <div class="row mr-1 ml-1">
+                          <a class="btn btn-primary text-white col-md-3 " onclick="num('0')">0</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('.')">.</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('=')">=</a>
+                          <a class="btn btn-primary text-white col-md-3" onclick="num('+')">+</a>
+                        </div>
+                      
+                <!-- </div> -->
+              <!-- </div> -->
+    </div>
+    <div class="row">
+      
     </div>
 
     <script src="form.js"></script>
