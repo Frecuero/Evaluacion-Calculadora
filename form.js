@@ -16,8 +16,11 @@ num = ((valor)=> {
         total += valor
         operation(valor)
     }else{
-        if(valor == "off" || valor == "ac"){
+        if(valor == "off"){
             cleanResult()
+        }
+        if(valor == "ac"){
+            clear()
         }
     }    
 })
@@ -25,11 +28,12 @@ num = ((valor)=> {
 function operation (valor){
     if(valor == '/' || valor == '*' || valor == '+' || valor == '-' || valor == '='){
         // total = total.substring(0, total.length - 1)
-        console.log('valor de operacion total '+ total + " op "+valor)
-        if(valor == '='){
+        // console.log('valor de operacion total '+ total + " op "+valor)
+        igual = total.indexOf("=") == -1? true : false 
+        if(valor == '=' && igual){
             total = total.substring(0, total.length - 1)
             let a = eval(total)
-            total = total + '= '+a
+            total = total + '= '+ a
             operacion.push(total)
         }
         switch (valor) {
@@ -96,7 +100,16 @@ function operation (valor){
 
 function cleanResult() {
 	total=''
+    aux = ''
+    auxtotal = ''
     operacion = []
     document.getElementById('list').innerHTML = ''
+    $("#result").val(total);
+}
+
+function clear(){
+    total=''
+    aux = ''
+    auxtotal = ''
     $("#result").val(total);
 }
