@@ -30,11 +30,13 @@ function operation (valor){
         // total = total.substring(0, total.length - 1)
         // console.log('valor de operacion total '+ total + " op "+valor)
         igual = total.indexOf("=") == -1? true : false 
-        if(valor == '=' && igual){
+        if(valor == '='){
             total = total.substring(0, total.length - 1)
             let a = eval(total)
             total = total + '= '+ a
-            operacion.push(total)
+            if (total != undefined && a != undefined ){
+                operacion.push(total)
+            }
         }
         switch (valor) {
             case '/':
